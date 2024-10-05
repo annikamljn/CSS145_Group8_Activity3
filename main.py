@@ -10,11 +10,11 @@ from io import StringIO
 
 st.title("Group #8, Section BM3: Activity 3")
 st.markdown("""
-    - **BUNAG, Annika**: `(2023102813, @annikamljn)`
-    - **CHUA, Denrick Ronn**:
-    - **MALLILLIN, Loragene**:
-    - **SIBAYAN, Gian Eugene**:
-    - **UMALI, Ralph Dwayne**:
+    - **BUNAG, Annika** - `2023102813` - `@annikamljn`
+    - **CHUA, Denrick Ronn** -
+    - **MALLILLIN, Loragene** -
+    - **SIBAYAN, Gian Eugene** -
+    - **UMALI, Ralph Dwayne** -
 """
 )
 
@@ -80,11 +80,15 @@ plt.clf()
 
 st.markdown("The graph shows that **Razer** laptops are the **priciest**, averaging **over €3,000**, with LG and Microsoft also on the high end. Apple and Huawei follow closely. Meanwhile, **Chuwi, Mediacom, and Vero** have the **cheapest** options, all under €500.")
 
-############ Average Price by Company (Bar Chart) #############
-st.header("# 3. Distribution of Laptops by CPU Company (Pie Chart)")
+############ Distribution of Laptops by CPU Company (Pie Chart) #############
+st.header("3. Distribution of Laptops by CPU Company (Pie Chart)")
+
 cpu_company_count = df['CPU_Company'].value_counts()
+st.write("`df['CPU_Company'].value_counts()`")
+st.write(cpu_company_count)
 
 percentages = (cpu_company_count / cpu_company_count.sum()) * 100
+
 legend_labels = [f'{company} - {percent:.1f}%' for company, percent in zip(cpu_company_count.index, percentages)]
 
 plt.figure(figsize=(10, 6))
