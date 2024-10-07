@@ -42,9 +42,9 @@ This dashboard offers the following visualizations:
 
 ## Group 8 Members:
 - **BUNAG, Annika** – `2023102813`
-- **CHUA, Denrick Ronn**  
+- **CHUA, Denrick Ronn**  - `2023108259`
 - **MALLILLIN, Loragene** – `2023108040`
-- **SIBAYAN, Gian Eugene**  
+- **SIBAYAN, Gian Eugene**  - `2023108887`
 - **UMALI, Ralph Dwayne** – `2021135163`
 
 ## Additional Links
