@@ -4,8 +4,7 @@ This project explores a dataset of laptop prices using various data visualizatio
 
 ## Project Link
 - [Streamlit Dashboard](https://github.com/annikamljn/CSS145_Group8_Activity3)
-- [Streamlit Content](https://l.messenger.com/l.php?u=https%3A%2F%2Fcss145-group8-activity3.streamlit.app%2F&h=AT1RE3hQXSGXQ87ibhl112GYUqbizRIjb8SwsX9BAUx3TGHeF-fRQa1-u8V7hCkmGVF5G_uRSTE5Vune36ZObcqG1uvshw1hy7-xS7zOan25IU0pZWJI2lnHz4SHV1A8A_Ma7tfGaZP8iJY)
-
+- [Streamlit Project](https://css145-group8-activity3.streamlit.app/?fbclid=IwZXh0bgNhZW0CMTEAAR3vYPEbuK4SiEtp8s3dUGlpNFAD0NRoYtbdx1D9d-Qhw00vF0L5751gUBU_aem_bSB7W0tCR75RzyWYgjNSlQ)
 ## Project Overview
 We analyzed several factors that influence laptop prices, including:
 - **Laptop Type**: How prices vary across categories like Gaming laptops, Workstations, and Netbooks.
