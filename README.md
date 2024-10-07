@@ -1,6 +1,6 @@
 # Group #8, Section BM3: Activity 3
 
-Laptop Price Analysis Dashboard
+# Laptop Price Analysis Dashboard
 
 This project is aims to analyze a dataset of laptop prices using various visualization techniques. It was developed using streamlit to provide interactive insights into laptop price trends based on different attributes such as type, brand, and specifications.
 
