@@ -12,7 +12,7 @@ st.title("Group #8, Section BM3: Activity 3")
 st.markdown("""
     - **BUNAG, Annika** - `2023102813` - `@annikamljn`
     - **CHUA, Denrick Ronn** -
-    - **MALLILLIN, Loragene** -
+    - **MALLILLIN, Loragene** - `2023108040` - `@ldmallillin`
     - **SIBAYAN, Gian Eugene** -
     - **UMALI, Ralph Dwayne** -
 """
@@ -103,6 +103,61 @@ st.pyplot(plt)
 plt.clf()
 
 st.markdown("The pie chart shows that **Intel** dominates the laptop market, powering 95.2% of laptops, while **AMD** comes in second with 4.7%. **Samsung** barely makes a mark, with only 0.1%. It's clear that Intel's processors are the go-to choice for most laptops.")
+
+############ Distribution of Laptop Prices (Histogram) #############
+st.header("4. Distribution of Laptop Prices (Histogram)")
+
+def dist_prices():
+    plt.figure(figsize=(10, 6))  # Adjust the figure size for better readability
+    plt.hist(df['Price (Euro)'], bins=30, color='gray', edgecolor='black')
+    plt.xticks(range(0, 6001, 500), rotation=45)
+    plt.xlabel('Price (Euro)')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Laptop Prices')
+    st.pyplot(plt)
+    plt.clf()  # Clear the plot to avoid overlapping with subsequent plots
+
+    # Display a brief explanation after the chart
+    st.markdown("""
+        The histogram shows the distribution of laptop prices across the dataset. **Most laptops are priced between €500 and €1000**, 
+        followed by laptops priced between €1000 and €1500, with fewer laptops available for under €500.
+    """)
+
+dist_prices()
+
+############ Laptop Price vs. CPU Frequency (Box Plot) #############
+st.header("5. Laptop Price vs. CPU Frequency (Box Plot)")
+
+def price_vs_cpu():
+    bins = [0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0]
+    bin_labels = ['<1.5 GHz', '1.5-2.0 GHz', '2.0-2.5 GHz', '2.5-3.0 GHz', '3.0-3.5 GHz', '3.5-4.0 GHz']
+    df['CPU_Frequency_binned'] = pd.cut(df['CPU_Frequency (GHz)'], bins=bins, labels=bin_labels)
+
+    plt.figure(figsize=(10, 6))  # Adjust the figure size
+    sns.boxplot(data=df, x="CPU_Frequency_binned", y="Price (Euro)", hue="CPU_Frequency_binned", palette="Set3", dodge=False)
+    plt.xlabel("CPU Frequency (GHz)")
+    plt.ylabel("Price (Euro)")
+    plt.title("Laptop Price vs. CPU Frequency (GHz)")
+    plt.xticks(rotation=45)
+    plt.yticks(range(0, 6001, 500))
+    plt.grid(axis='y')
+    st.pyplot(plt)
+    plt.clf()  # Clear the plot
+
+    # Display a brief explanation after the chart
+    st.markdown("""
+        The box plot shows that **laptops with higher CPU frequencies (3.0-3.5 GHz) tend to be the most expensive**, often ranging 
+        between €1500 and €2500 or more. Laptops with lower CPU frequencies have a wider price range, especially those with 2.5-3.0 GHz 
+        CPUs, which vary from under €500 to over €3000.
+    """)
+
+price_vs_cpu()
+
+# Streamlit app title
+st.title("Laptop Price Analysis")
+
+
+
 
 ############ Conclusions #############
 st.header("Conclusions")
