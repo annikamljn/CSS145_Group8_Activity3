@@ -3,7 +3,6 @@
 This project explores a dataset of laptop prices using various data visualization techniques. Built with **Streamlit**, it provides interactive insights into laptop pricing trends based on key attributes such as laptop type, brand, and technical specifications.
 
 ## Project Link
-- [Streamlit Dashboard](https://github.com/annikamljn/CSS145_Group8_Activity3)
 - [Streamlit Project](https://css145-group8-activity3.streamlit.app/?fbclid=IwZXh0bgNhZW0CMTEAAR3vYPEbuK4SiEtp8s3dUGlpNFAD0NRoYtbdx1D9d-Qhw00vF0L5751gUBU_aem_bSB7W0tCR75RzyWYgjNSlQ)
 ## Project Overview
 We analyzed several factors that influence laptop prices, including:
