@@ -7,6 +7,7 @@ import altair as alt
 import networkx as nx
 import plotly.graph_objects as go
 from io import StringIO
+import re
 
 st.title("Group #8, Section BM3: Activity 3")
 st.markdown("""
@@ -181,21 +182,22 @@ def price_vs_resolution():
     plt.xlabel('Screen Resolution')
     plt.ylabel('Price (Euro)')
     plt.title('Laptop Price vs. Screen Resolution')
-    plt.xticks(rotation=45)
-    plt.yticks(range(0, 6001, 500))
+    plt.xticks(rotation=45)  # Rotate x-axis labels for readability
+    plt.yticks(range(0, 6001, 500))  # Customize y-axis tick intervals
     plt.grid(axis='y')  # Add grid lines for better readability
 
+    # Display the plot in Streamlit
     st.pyplot(plt)
     plt.clf()  # Clear the plot
 
-    # Display explanation after the chart
-    st.markdown("""
-        **Laptops with higher screen resolutions (3840x2160, 2880x1800) tend to be more expensive**. Common resolutions like **1920x1080**
-        are more affordable, while lower resolutions like **1366x768** are typically cheaper.
-    """)
-
 # Call the function
 price_vs_resolution()
+
+# Display explanation after the chart
+st.markdown("""
+    Laptops with higher screen resolutions (e.g., 3840x2160 and 2880x1800) tend to be more expensive. Common resolutions like 1920x1080
+    are more affordable, while lower resolutions such as 1366x768 are generally cheaper.
+""")
 
 ############ Laptop Price vs. GPU Company (Box Plot) #############
 st.header("7. Laptop Price vs. GPU Company (Box Plot)")
@@ -216,21 +218,22 @@ def price_vs_gpu():
     plt.yticks(range(0, 6001, 500))
     plt.grid(axis='y')  # Add grid lines for better readability
 
+    # Display the plot in Streamlit
     st.pyplot(plt)
     plt.clf()  # Clear the plot
-
-    # Display explanation after the chart
-    st.markdown("""
-        **Laptops with Intel and Nvidia GPUs generally have higher prices**, with Nvidia models showing a wide range from mid-range to high-end. 
-        **AMD laptops** are typically more affordable. There is insufficient data on **ARM-based laptops** to form conclusions.
-    """)
 
 # Call the function
 price_vs_gpu()
 
-############ Weight vs. Laptop Type (Box Plot) #############
-st.header("10. Weight vs. Laptop Type (Box Plot)")
+# Display explanation after the chart
+st.markdown("""
+    Laptops with Intel and Nvidia GPUs generally have higher prices. Nvidia, in particular, shows the widest price range,
+    indicating a lineup from mid-range to very high-end models. Meanwhile, AMD laptops are typically more affordable. 
+    There is insufficient data on ARM-based laptops to form conclusions.
+""")
 
+
+# Box Plot: Weight vs. Laptop Type
 def weight_vs_type():
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='TypeName', y='Weight (kg)', data=df, palette='viridis')
@@ -239,22 +242,11 @@ def weight_vs_type():
     plt.title('Weight Distribution on Different Laptop Types')
     plt.xticks(rotation=45)
     plt.grid(True)
-
+    
+    # Display the plot in Streamlit
     st.pyplot(plt)
-    plt.clf()
 
-# Call the function
-weight_vs_type()
-
-st.markdown("""
-Laptops labeled as Gaming typically carry the most weight, while the lighter Ultrabooks are shown by the box plot. 
-The weights represented for each laptop type reveal that Notebooks maintain a moderate balance between portability and performance. 
-This visualization indicates different weight disparities among laptop types, suggesting that design aims can vary.
-""")
-
-############ Operating System Distribution (Pie Chart) #############
-st.header("11. Operating System Distribution (Pie Chart)")
-
+# Pie Chart: Operating System Distribution
 def os_distribution():
     # Grouping by 'OpSys' and counting the occurrences
     os_count = df['OpSys'].value_counts()
@@ -274,17 +266,25 @@ def os_distribution():
     # Hide the y-label
     plt.ylabel('')
 
+    # Display the pie chart in Streamlit
     st.pyplot(plt)
-    plt.clf()
 
-# Call the function
+# Display the box plot
+st.write("### Weight Distribution on Different Laptop Types")
+weight_vs_type()
+st.write("""
+Laptops labeled as Gaming typically carry the most weight, while the lighter Ultrabooks are shown by the box plot. 
+The weights represented for each laptop type reveal that Notebooks maintain a moderate balance between portability and performance. 
+This visualization indicates different weight disparities among laptop types, suggesting that design aims can vary.
+""")
+
+# Display the pie chart
+st.write("### Operating System Distribution")
 os_distribution()
-
-st.markdown("""
+st.write("""
 Windows 10 dominates the laptop market with an 82.2% share. Other operating systems like No OS (5.2%), Linux (4.5%), 
 and various Windows versions, Chrome OS, and macOS each have less than 5% market share.
 """)
-
 
 ############ Conclusions #############
 st.header("Conclusions")
