@@ -9,8 +9,8 @@ This project explores a dataset of laptop prices using various data visualizatio
 In this project, we explore how laptop prices vary based on different factors. The goal is to help users quickly spot trends and understand what influences laptop costs. 
 
 - **Laptop Type**: Different types like Gaming laptops, Workstations, and Netbooks come with different price tags. Gaming laptops and Workstations are more expensive, while Netbooks tend to be cheaper.
-- **Brand**: Brand matters too. High-end brands like **Razer** have higher prices, while others like **Mediacom** are more affordable. This helps users see if paying extra for a brand is worth it.
-- **Specifications**: We also look at how the specs like **RAM**, **CPU speed**, and **screen size**—affect prices. You can see how better specs usually mean higher prices.
+- **Brand**: High-end brands like **Razer** have higher prices, while others like **Mediacom** are more affordable. This helps users see if paying extra for a brand is worth it.
+- **Specifications**: We also look at how the specs like **RAM**, **CPU speed**, and **screen size** affect prices. You can see how better specs usually mean higher prices.
 - **Operating System**: Most laptops run **Windows 10**, but we also show the price differences for other systems like macOS or Linux.
 
 
