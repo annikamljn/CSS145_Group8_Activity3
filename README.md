@@ -5,16 +5,6 @@ This project explores a dataset of laptop prices using various data visualizatio
 ## Project Link
 - [Streamlit Dashboard](https://github.com/annikamljn/CSS145_Group8_Activity3)
 
-## Tools & Libraries:
-- **Streamlit** for creating the interactive web app
-- **Matplotlib** and **Seaborn** for data visualizations
-- **Pandas** for handling and analyzing data
-- **Altair** and **Plotly** for generating interactive charts
-- **NetworkX** for network-based visualizations
-
-## Dataset
-The dataset focuses on laptop prices and includes features such as `TypeName`, `Price (Euro)`, `RAM`, `Operating System`, and more. It offers insights into how various factors impact laptop pricing.
-
 ## Project Overview
 We analyzed several factors that influence laptop prices, including:
 - **Laptop Type**: How prices vary across categories like Gaming laptops, Workstations, and Netbooks.
@@ -37,7 +27,7 @@ The following visualizations are featured in the dashboard:
 - Higher **RAM** capacities and **CPU frequencies** generally result in higher prices.
 
 ## Repository Structure
-- `main.py`: The main Streamlit app that powers the dashboard
+- `main.py`: The main Streamlit app 
 - `laptop_price - dataset.csv`: The dataset used in our analysis
 
 ## Group 8 Members:
