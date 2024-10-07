@@ -41,4 +41,4 @@ The following Graphs are visualized in the dashboard:
 ## Additional Links
 - GitHub Repository: [CSS145 Group8 Activity3](https://github.com/annikamljn/CSS145_Group8_Activity3)
 - Google Colab Notebook: [Colab Link](https://colab.research.google.com/drive/1TbRuhYoAk_43i9g--eJ2GA_3-DnHkrWA?usp=sharing)
-- `laptop_price - dataset.csv`: 
+- `laptop_price - dataset.csv`
