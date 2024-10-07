@@ -50,7 +50,3 @@ The following visualizations are featured in the dashboard:
 ## Additional Links
 - GitHub Repository: [CSS145 Group8 Activity3](https://github.com/annikamljn/CSS145_Group8_Activity3)
 - Google Colab Notebook: [Colab Link](https://colab.research.google.com/drive/1TbRuhYoAk_43i9g--eJ2GA_3-DnHkrWA?usp=sharing)
-
----
-
-This version retains the essence of the original but reads more naturally and casually. It also uses full names to match typical academic or professional settings. Let me know if this works!
