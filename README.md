@@ -6,10 +6,14 @@ This project explores a dataset of laptop prices using various data visualizatio
 - [Streamlit Project](https://css145-group8-activity3.streamlit.app/?fbclid=IwZXh0bgNhZW0CMTEAAR3vYPEbuK4SiEtp8s3dUGlpNFAD0NRoYtbdx1D9d-Qhw00vF0L5751gUBU_aem_bSB7W0tCR75RzyWYgjNSlQ)
   
 ## Project Overview
-We analyzed several factors that influence laptop prices, including:
-- **Laptop Type**: How prices vary across categories like Gaming laptops, Workstations, and Netbooks.
-- **Brand**: Price trends based on manufacturers like Razer, LG, and Mediacom.
-- **Technical Specs**: The role of CPU frequency, RAM size, GPU type, and screen resolution in determining prices.
+In this project, we explore how laptop prices vary based on different factors. The goal is to help users quickly spot trends and understand what influences laptop costs. 
+
+- **Laptop Type**: Different types like Gaming laptops, Workstations, and Netbooks come with different price tags. Gaming laptops and Workstations are more expensive, while Netbooks tend to be cheaper.
+- **Brand**: Brand matters too. High-end brands like **Razer** have higher prices, while others like **Mediacom** are more affordable. This helps users see if paying extra for a brand is worth it.
+- **Specifications**: We also look at how the specs like **RAM**, **CPU speed**, and **screen size**—affect prices. You can see how better specs usually mean higher prices.
+- **Operating System**: Most laptops run **Windows 10**, but we also show the price differences for other systems like macOS or Linux.
+
+
 
 ## Graphs
 The following Graphs are visualized in the dashboard:
@@ -37,9 +41,3 @@ The following Graphs are visualized in the dashboard:
 - **Loragene Mallillin** – `2023108040`
 - **Gian Eugene Sibayan** – `2023108887`
 - **Ralph Dwayne Umali** – `2021135163`
-
-## Additional Links
-- GitHub Repository: [CSS145 Group8 Activity3](https://github.com/annikamljn/CSS145_Group8_Activity3)
-- Google Colab Notebook: [Colab Link](https://colab.research.google.com/drive/1TbRuhYoAk_43i9g--eJ2GA_3-DnHkrWA?usp=sharing)
-- [Streamlit Dashboard](https://github.com/annikamljn/CSS145_Group8_Activity3)
-- `laptop_price - dataset.csv`
