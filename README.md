@@ -11,14 +11,19 @@ We analyzed several factors that influence laptop prices, including:
 - **Brand**: Price trends based on manufacturers like Razer, LG, and Mediacom.
 - **Technical Specs**: The role of CPU frequency, RAM size, GPU type, and screen resolution in determining prices.
 
-## Visualizations
-The following visualizations are featured in the dashboard:
-1. **Bar Chart**: Average price by laptop type
-2. **Pie Chart**: Operating system distribution
-3. **Box Plot**: Laptop weight categorized by type
-4. **Heatmap**: Correlations between specs and prices
-5. **Scatter Plot**: Price versus RAM size
-6. **Network Graph**: Connections between brands and price ranges
+## Graphs
+The following Graphs are visualized in the dashboard:
+1. **Bar Chart**: Average Price by Laptop Type
+2. **Bar Chart**: Average Price by Company
+3. **Pie Chart**: Distribution of Laptops by CPU 
+4. **Histogram**: Distribution of Laptop Prices
+5. **Box Plot**: Laptop Price vs. CPU Frequency
+6. **Box Plot**: Laptop Price vs. Screen Resolution
+7. **Box Plot**: Laptop Price vs. GPU Company
+8. **Box Plot**: Laptop Price vs. RAM 
+9. **Scatter Plot**: Laptop Price vs. Weight 
+10. **Box Plot**: Weight vs. Laptop
+11. **Pie Chart**: Operating System Distribution
 
 ## Key Insights:
 - **Workstations** and **Gaming laptops** are the priciest, while **Netbooks** are the most affordable.
