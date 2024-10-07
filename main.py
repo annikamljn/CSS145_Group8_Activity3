@@ -197,13 +197,6 @@ def price_vs_resolution():
 # Call the function
 price_vs_resolution()
 
-# Example DataFrame (Replace this with your actual dataset)
-data = {
-    'GPU_Company': ['Nvidia', 'Intel', 'Nvidia', 'AMD', 'Intel'],
-    'Price (Euro)': [1000, 500, 3000, 1200, 2500]
-}
-df = pd.DataFrame(data)
-
 ############ Laptop Price vs. GPU Company (Box Plot) #############
 st.header("7. Laptop Price vs. GPU Company (Box Plot)")
 
@@ -235,7 +228,9 @@ def price_vs_gpu():
 # Call the function
 price_vs_gpu()
 
-# Box Plot: Weight vs. Laptop Type
+############ Weight vs. Laptop Type (Box Plot) #############
+st.header("10. Weight vs. Laptop Type (Box Plot)")
+
 def weight_vs_type():
     plt.figure(figsize=(10, 6))
     sns.boxplot(x='TypeName', y='Weight (kg)', data=df, palette='viridis')
@@ -244,11 +239,22 @@ def weight_vs_type():
     plt.title('Weight Distribution on Different Laptop Types')
     plt.xticks(rotation=45)
     plt.grid(True)
-    
-    # Display the plot in Streamlit
-    st.pyplot(plt)
 
-# Pie Chart: Operating System Distribution
+    st.pyplot(plt)
+    plt.clf()
+
+# Call the function
+weight_vs_type()
+
+st.markdown("""
+Laptops labeled as Gaming typically carry the most weight, while the lighter Ultrabooks are shown by the box plot. 
+The weights represented for each laptop type reveal that Notebooks maintain a moderate balance between portability and performance. 
+This visualization indicates different weight disparities among laptop types, suggesting that design aims can vary.
+""")
+
+############ Operating System Distribution (Pie Chart) #############
+st.header("11. Operating System Distribution (Pie Chart)")
+
 def os_distribution():
     # Grouping by 'OpSys' and counting the occurrences
     os_count = df['OpSys'].value_counts()
@@ -268,25 +274,17 @@ def os_distribution():
     # Hide the y-label
     plt.ylabel('')
 
-    # Display the pie chart in Streamlit
     st.pyplot(plt)
+    plt.clf()
 
-# Display the box plot
-st.write("### Weight Distribution on Different Laptop Types")
-weight_vs_type()
-st.write("""
-Laptops labeled as Gaming typically carry the most weight, while the lighter Ultrabooks are shown by the box plot. 
-The weights represented for each laptop type reveal that Notebooks maintain a moderate balance between portability and performance. 
-This visualization indicates different weight disparities among laptop types, suggesting that design aims can vary.
-""")
-
-# Display the pie chart
-st.write("### Operating System Distribution")
+# Call the function
 os_distribution()
-st.write("""
+
+st.markdown("""
 Windows 10 dominates the laptop market with an 82.2% share. Other operating systems like No OS (5.2%), Linux (4.5%), 
 and various Windows versions, Chrome OS, and macOS each have less than 5% market share.
 """)
+
 
 ############ Conclusions #############
 st.header("Conclusions")
