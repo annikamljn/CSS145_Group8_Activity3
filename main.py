@@ -235,20 +235,6 @@ def price_vs_gpu():
 # Call the function
 price_vs_gpu()
 
-import streamlit as st
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-# Automatically load the CSV file from the specified path
-@st.cache_data
-def load_data():
-    df = pd.read_csv('laptop_price - dataset.csv')  
-    return df
-
-# Load the dataset automatically
-df = load_data()
-
 # Box Plot: Weight vs. Laptop Type
 def weight_vs_type():
     plt.figure(figsize=(10, 6))
