@@ -12,7 +12,7 @@ import re
 st.title("Group #8, Section BM3: Activity 3")
 st.markdown("""
     - **BUNAG, Annika** - `2023102813` - `@annikamljn`
-    - **CHUA, Denrick Ronn** -
+    - **CHUA, Denrick Ronn** - `2023108259` - `@chuadenrick`
     - **MALLILLIN, Loragene** - `2023108040` - `@ldmallillin`
     - **SIBAYAN, Gian Eugene** - `2023108887` - `@GianSibayan`
     - **UMALI, Ralph Dwayne** - `2021135163` - `@UmaliDwayneRalph`
@@ -232,6 +232,60 @@ st.markdown("""
     There is insufficient data on ARM-based laptops to form conclusions.
 """)
 
+############ Laptop Price vs. RAM (Box Plot) #############
+st.header("8. Laptop Price vs. RAM (Box Plot)")
+
+def price_vs_ram():
+    df['RAM_binned'] = df['RAM (GB)']
+
+    plt.figure(figsize=(10, 6))  # Adjust the figure size
+    sns.boxplot(data=df, x="RAM_binned", y="Price (Euro)", hue="RAM_binned", palette="Set2", dodge=False)
+    plt.xlabel("RAM (GB)")
+    plt.ylabel("Price (Euro)")
+    plt.title("Laptop Price vs. RAM (GB)")
+    plt.yticks(range(0, 6001, 500))
+    plt.grid(axis='y')
+    st.pyplot(plt)
+    plt.clf()  # Clear the plot
+
+    # Display a brief explanation after the chart
+    st.markdown("""
+        Laptops with more RAM tend to cost more, with noticeable price increases for laptops with 16 GB or more RAM. However, even within the same RAM category, prices can vary significantly, as shown by the wide range of some boxes and the presence of outliers.
+    """)
+
+price_vs_ram()
+
+############ Laptop Price vs. Weight (Scatter Plot) #############
+
+st.header("9. Laptop Price vs. Weight (Scatter Plot)")
+
+def price_vs_weight():
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    # Create the scatter plot
+    sns.scatterplot(x='Weight (kg)', y='Price (Euro)', data=df, color='slateblue', s=50, alpha=0.6, ax=ax)
+    
+    # Add a regression line
+    sns.regplot(x='Weight (kg)', y='Price (Euro)', data=df, scatter=False, color='darkorange', ci=None, ax=ax)
+    
+    # Set plot labels and title
+    ax.set_xlabel('Weight (kg)')
+    ax.set_ylabel('Price (Euro)')
+    ax.set_title('Laptop Price vs. Weight (kg)')
+    
+    # Add a grid
+    ax.grid(True)
+    
+    # Display the plot in Streamlit
+    st.pyplot(fig)
+    plt.clf()  # Clear the plot
+
+    # Display a brief explanation after the chart
+    st.markdown("""
+        More often than not, laptops that are heavy receive higher asking prices. This trend suggests a positive correlation, which implies that as weight increases, the price will probably rise too. Still, there exists a major variation, with a few lighter models costing like heavier counterparts.
+    """)
+
+price_vs_weight()
 
 ############ Weight vs. Laptop Type (Box Plot) #############
 st.header("10. Weight vs. Laptop Type (Box Plot)")
