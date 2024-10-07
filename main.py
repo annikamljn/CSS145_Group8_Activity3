@@ -156,7 +156,84 @@ price_vs_cpu()
 # Streamlit app title
 st.title("Laptop Price Analysis")
 
+############ Laptop Price vs. Screen Resolution (Box Plot) #############
+st.header("6. Laptop Price vs. Screen Resolution (Box Plot)")
 
+def price_vs_resolution():
+    # Extract the numerical part of the screen resolution
+    def extract_resolution(resolution):
+        match = re.search(r'\d+x\d+', resolution)  # Extract resolution like '1920x1080'
+        if match:
+            return match.group(0)
+        return resolution  # Return the original if no match found
+
+    # Apply the function to the 'ScreenResolution' column to clean the data
+    df['CleanResolution'] = df['ScreenResolution'].apply(extract_resolution)
+
+    # Sorting the resolutions for better display
+    sorted_resolutions = df['CleanResolution'].value_counts().index.tolist()
+
+    # Create a boxplot grouped by the cleaned numerical screen resolution
+    plt.figure(figsize=(10, 6))  # Adjust the figure size
+    sns.boxplot(data=df, x='CleanResolution', y='Price (Euro)', hue='CleanResolution', palette='Set3', order=sorted_resolutions)
+
+    # Add labels, title, and formatting
+    plt.xlabel('Screen Resolution')
+    plt.ylabel('Price (Euro)')
+    plt.title('Laptop Price vs. Screen Resolution')
+    plt.xticks(rotation=45)
+    plt.yticks(range(0, 6001, 500))
+    plt.grid(axis='y')  # Add grid lines for better readability
+
+    st.pyplot(plt)
+    plt.clf()  # Clear the plot
+
+    # Display explanation after the chart
+    st.markdown("""
+        **Laptops with higher screen resolutions (3840x2160, 2880x1800) tend to be more expensive**. Common resolutions like **1920x1080**
+        are more affordable, while lower resolutions like **1366x768** are typically cheaper.
+    """)
+
+# Call the function
+price_vs_resolution()
+
+# Example DataFrame (Replace this with your actual dataset)
+data = {
+    'GPU_Company': ['Nvidia', 'Intel', 'Nvidia', 'AMD', 'Intel'],
+    'Price (Euro)': [1000, 500, 3000, 1200, 2500]
+}
+df = pd.DataFrame(data)
+
+############ Laptop Price vs. GPU Company (Box Plot) #############
+st.header("7. Laptop Price vs. GPU Company (Box Plot)")
+
+def price_vs_gpu():
+    # Bin the GPU Company column
+    df['GPU_Company_binned'] = df['GPU_Company']
+
+    # Create a boxplot for GPU Company vs. Price
+    plt.figure(figsize=(8, 6))  # Adjust the figure size
+    sns.boxplot(data=df, x="GPU_Company_binned", y="Price (Euro)", palette="Set3", hue="GPU_Company_binned", dodge=False)
+
+    # Add labels, title, and formatting
+    plt.xlabel("GPU Company")
+    plt.ylabel("Price (Euro)")
+    plt.title("Laptop Price vs. GPU Company")
+    plt.xticks(rotation=45)
+    plt.yticks(range(0, 6001, 500))
+    plt.grid(axis='y')  # Add grid lines for better readability
+
+    st.pyplot(plt)
+    plt.clf()  # Clear the plot
+
+    # Display explanation after the chart
+    st.markdown("""
+        **Laptops with Intel and Nvidia GPUs generally have higher prices**, with Nvidia models showing a wide range from mid-range to high-end. 
+        **AMD laptops** are typically more affordable. There is insufficient data on **ARM-based laptops** to form conclusions.
+    """)
+
+# Call the function
+price_vs_gpu()
 
 
 ############ Conclusions #############
