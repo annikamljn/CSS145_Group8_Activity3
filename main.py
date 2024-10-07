@@ -13,7 +13,7 @@ st.markdown("""
     - **BUNAG, Annika** - `2023102813` - `@annikamljn`
     - **CHUA, Denrick Ronn** -
     - **MALLILLIN, Loragene** - `2023108040` - `@ldmallillin`
-    - **SIBAYAN, Gian Eugene** -
+    - **SIBAYAN, Gian Eugene** - `2023108887` - `@GianSibayan`
     - **UMALI, Ralph Dwayne** - `2021135163` - `@UmaliDwayneRalph`
 """
 )
@@ -235,6 +235,72 @@ def price_vs_gpu():
 # Call the function
 price_vs_gpu()
 
+import streamlit as st
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Automatically load the CSV file from the specified path
+@st.cache_data
+def load_data():
+    df = pd.read_csv('laptop_price - dataset.csv')  
+    return df
+
+# Load the dataset automatically
+df = load_data()
+
+# Box Plot: Weight vs. Laptop Type
+def weight_vs_type():
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='TypeName', y='Weight (kg)', data=df, palette='viridis')
+    plt.xlabel('Laptop Type')
+    plt.ylabel('Weight (kg)')
+    plt.title('Weight Distribution on Different Laptop Types')
+    plt.xticks(rotation=45)
+    plt.grid(True)
+    
+    # Display the plot in Streamlit
+    st.pyplot(plt)
+
+# Pie Chart: Operating System Distribution
+def os_distribution():
+    # Grouping by 'OpSys' and counting the occurrences
+    os_count = df['OpSys'].value_counts()
+
+    # Calculating percentages
+    percentages = (os_count / os_count.sum()) * 100
+    legend_labels = [f'{os} - {percent:.1f}%' for os, percent in zip(os_count.index, percentages)]
+
+    # Plotting the distribution of operating systems as a pie chart
+    plt.figure(figsize=(10, 6))
+    os_count.plot(kind='pie', startangle=90, labels=[''] * len(os_count))  # Empty labels for clean pie chart
+    plt.title('Operating System Distribution')
+
+    # Adding a legend with percentages on the side
+    plt.legend(labels=legend_labels, loc='center left', bbox_to_anchor=(1.0, 0.5))
+
+    # Hide the y-label
+    plt.ylabel('')
+
+    # Display the pie chart in Streamlit
+    st.pyplot(plt)
+
+# Display the box plot
+st.write("### Weight Distribution on Different Laptop Types")
+weight_vs_type()
+st.write("""
+Laptops labeled as Gaming typically carry the most weight, while the lighter Ultrabooks are shown by the box plot. 
+The weights represented for each laptop type reveal that Notebooks maintain a moderate balance between portability and performance. 
+This visualization indicates different weight disparities among laptop types, suggesting that design aims can vary.
+""")
+
+# Display the pie chart
+st.write("### Operating System Distribution")
+os_distribution()
+st.write("""
+Windows 10 dominates the laptop market with an 82.2% share. Other operating systems like No OS (5.2%), Linux (4.5%), 
+and various Windows versions, Chrome OS, and macOS each have less than 5% market share.
+""")
 
 ############ Conclusions #############
 st.header("Conclusions")
