@@ -1,53 +1,56 @@
 # Laptop Price Analysis Dashboard
 
-This project is aims to analyze a dataset of laptop prices using various visualization techniques. It was developed using streamlit to provide interactive insights into laptop price trends based on different attributes such as type, brand, and specifications.
+This project explores a dataset of laptop prices using various data visualization techniques. Built with **Streamlit**, it provides interactive insights into laptop pricing trends based on key attributes such as laptop type, brand, and technical specifications.
 
 ## Project Link
-: [Streamlit Dashboard](https://github.com/annikamljn/CSS145_Group8_Activity3)
+- [Streamlit Dashboard](https://github.com/annikamljn/CSS145_Group8_Activity3)
 
-## Tools & Libraries Used:
-- **Streamlit** for web app development
-- **Matplotlib** and **Seaborn** for data visualization
-- **Pandas** for data manipulation
-- **Altair** and **Plotly** for interactive charts
-- **NetworkX** for network visualizations
+## Tools & Libraries:
+- **Streamlit** for creating the interactive web app
+- **Matplotlib** and **Seaborn** for data visualizations
+- **Pandas** for handling and analyzing data
+- **Altair** and **Plotly** for generating interactive charts
+- **NetworkX** for network-based visualizations
 
-##  Dataset
-The dataset used in this project is focused on laptop prices and contains features like `TypeName`, `Price (Euro)`, `RAM`, `Operating System`, and more.
+## Dataset
+The dataset focuses on laptop prices and includes features such as `TypeName`, `Price (Euro)`, `RAM`, `Operating System`, and more. It offers insights into how various factors impact laptop pricing.
 
 ## Project Overview
-This project analyzes various factors that influence laptop prices, such as:
-- **Type of Laptop**: Differences in average prices between categories like Gaming, Workstations, and Netbooks.
-- **Brand Influence**: Examining the price trends by manufacturer, comparing brands like Razer, LG, and Mediacom.
-- **Technical Specifications**: The impact of CPU frequency, RAM size, GPU type, and screen resolution on laptop prices.
+We analyzed several factors that influence laptop prices, including:
+- **Laptop Type**: How prices vary across categories like Gaming laptops, Workstations, and Netbooks.
+- **Brand**: Price trends based on manufacturers like Razer, LG, and Mediacom.
+- **Technical Specs**: The role of CPU frequency, RAM size, GPU type, and screen resolution in determining prices.
 
 ## Visualizations
-This dashboard offers the following visualizations:
-1. **Bar Chart**: Average price by laptop type.
-2. **Pie Chart**: Distribution of operating systems.
-3. **Box Plot**: Laptop weight by type.
-4. **Heatmap**: Correlation matrix of technical specifications and price.
-5. **Scatter Plot**: Price vs. RAM size.
-6. **Network Graph**: Connections between brands and price ranges.
+The following visualizations are featured in the dashboard:
+1. **Bar Chart**: Average price by laptop type
+2. **Pie Chart**: Operating system distribution
+3. **Box Plot**: Laptop weight categorized by type
+4. **Heatmap**: Correlations between specs and prices
+5. **Scatter Plot**: Price versus RAM size
+6. **Network Graph**: Connections between brands and price ranges
 
 ## Key Insights:
-- **Workstations** and **Gaming laptops** are the most expensive, with **Netbooks** being the cheapest.
-- **Razer** laptops tend to be the most expensive, with an average price of over €3000.
-- **Windows 10** dominates the market with over 80% of laptops running this OS.
-- Higher **RAM** capacities and **CPU frequencies** generally correspond to higher prices.
+- **Workstations** and **Gaming laptops** are the priciest, while **Netbooks** are the most affordable.
+- **Razer** laptops have the highest average price, exceeding €3000.
+- **Windows 10** is the most common OS, installed on over 80% of laptops in the dataset.
+- Higher **RAM** capacities and **CPU frequencies** generally result in higher prices.
 
 ## Repository Structure
-- `main.py`: The main Streamlit app file that runs the web dashboard.
-- `laptop_price - dataset.csv`: The dataset used for analysis.
+- `main.py`: The main Streamlit app that powers the dashboard
+- `laptop_price - dataset.csv`: The dataset used in our analysis
 
 ## Group 8 Members:
-- **BUNAG, Annika** – `2023102813`
-- **CHUA, Denrick Ronn**  - `2023108259`
-- **MALLILLIN, Loragene** – `2023108040`
-- **SIBAYAN, Gian Eugene**  - `2023108887`
-- **UMALI, Ralph Dwayne** – `2021135163`
+- **Annika Bunag** – `2023102813`
+- **Denrick Ronn Chua** – `2023108259`
+- **Loragene Mallillin** – `2023108040`
+- **Gian Eugene Sibayan** – `2023108887`
+- **Ralph Dwayne Umali** – `2021135163`
 
 ## Additional Links
 - GitHub Repository: [CSS145 Group8 Activity3](https://github.com/annikamljn/CSS145_Group8_Activity3)
 - Google Colab Notebook: [Colab Link](https://colab.research.google.com/drive/1TbRuhYoAk_43i9g--eJ2GA_3-DnHkrWA?usp=sharing)
 
+---
+
+This version retains the essence of the original but reads more naturally and casually. It also uses full names to match typical academic or professional settings. Let me know if this works!
