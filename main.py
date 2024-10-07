@@ -154,9 +154,6 @@ def price_vs_cpu():
 
 price_vs_cpu()
 
-# Streamlit app title
-st.title("Laptop Price Analysis")
-
 ############ Laptop Price vs. Screen Resolution (Box Plot) #############
 st.header("6. Laptop Price vs. Screen Resolution (Box Plot)")
 
@@ -313,6 +310,10 @@ This visualization indicates different weight disparities among laptop types, su
 
 ############ Operating System Distribution (Pie Chart) #############
 st.header("11. Operating System Distribution (Pie Chart)")
+
+os_dist_count = df['OpSys'].value_counts()
+st.write("`df['OpSys'].value_counts()`")
+st.write(os_dist_count)
 
 def os_distribution():
     # Grouping by 'OpSys' and counting the occurrences
